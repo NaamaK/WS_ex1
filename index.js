@@ -4,8 +4,8 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 var fs = require('fs');
-var studObj = JSON.parse(fs.readFileSync('./students.json', 'utf8'));
-var gradeObj = JSON.parse(fs.readFileSync('./grades.json', 'utf8'));
+var studObj = JSON.parse(fs.readFileSync('./data/students.json', 'utf8'));
+var gradeObj = JSON.parse(fs.readFileSync('./data/grades.json', 'utf8'));
 
 app.get('/', function(req, res) {
 	res.send(studObj);
@@ -36,7 +36,6 @@ var getStudsByGrade = function(grade) {
 					console.log(studObj[value2]);
 				}
 			});
-			//res.send(JSON.stringify(studObj[value].age));
 		}
 	});
 }
