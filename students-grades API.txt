@@ -1,7 +1,10 @@
 Students-Grades:
 
-// function that returns info about every students.
+// welcome page.
 https://exer1.herokuapp.com/
+
+// function that returns info about every students.
+https://exer1.herokuapp.com/allStudents
 
 // function that gets student name as a parameter (like 'shlomi') and returns his grade.
 https://exer1.herokuapp.com/studentGradeByName/shlomi
