@@ -14,30 +14,34 @@ app.get('/', function(req, res) {
 app.get('/:value', function(req, res) {
 	var value = req.params.value;
 	if (value >= 0 && value <= 100) {
-		getStudsByGrade(value);
-	} else {
+		res.send(getStudsByGrade(value));
+	} else  {
 		res.send(getStudGrade(value));
 	}
 });
 
 var getStudGrade = function(studName) {
+	var result;
 	studObj.forEach(function(key, value) {
-		if(studObj[value].name == studName) {
-			return (JSON.stringify(studObj[value].age));
-		}
+		if(studObj[value].name == studName) result= JSON.stringify(studObj[value].age);
 	});
+	return result;
 }
 
 var getStudsByGrade = function(grade) {
+	var jsonObj= '[]';
 	gradeObj.forEach(function(key, value) {
 		if(gradeObj[value].grade >= grade) {
 			studObj.forEach(function(key2, value2) {
 				if(studObj[value2].name == gradeObj[value].name) {
-					console.log(studObj[value2]);
+					var parsed= JSON.parse(jsonObj);
+					parsed.push(studObj[value2]);
+					jsonObj= JSON.stringify(parsed);
 				}
 			});
 		}
 	});
+	return JSON.parse(jsonObj);
 }
 
 app.listen(port);
