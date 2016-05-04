@@ -1,0 +1,10 @@
+Students-Grades:
+
+// function that returns info about every students.
+https://exer1.herokuapp.com/
+
+// function that gets student name as a parameter (like 'shlomi') and returns his grade.
+https://exer1.herokuapp.com/studentGradeByName/shlomi
+
+// function that get a grade as a parameter (like 90) and returns a list of all students with grade that is equal or bigger.
+https://exer1.herokuapp.com/studentsOverGrade/90
