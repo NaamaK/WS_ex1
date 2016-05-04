@@ -1,0 +1,53 @@
+{
+	"students": [
+		{
+			"name": "dan",
+			"age": 28,
+			"city": "holon"
+		},
+		{
+			"name": "rona",
+			"age": 23,
+			"city": "Azor"
+		},
+		{
+			"name": "shira",
+			"age": 32,
+			"city": "Bat-Yam"
+		},
+		{
+			"name": "shlomi",
+			"age": 33,
+			"city": "Ramat-Gan"
+		},
+		{
+			"name": "hila",
+			"age": 20,
+			"city": "Eilat"
+		}
+
+	],
+
+	"grades": [
+		{
+			"name": "dan",
+			"grade": 100
+		},
+		{
+			"name": "rona",
+			"grade": 75
+		},
+		{
+			"name": "shira",
+			"grade": 88
+		},
+		{
+			"name": "shlomi",
+			"grade": 94
+		},
+		{
+			"name": "hila",
+			"grade": 91
+		}
+	]
+}
