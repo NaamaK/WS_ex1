@@ -1,8 +1,21 @@
-var fs = require('fs');
 
-var dataObj = JSON.parse(fs.readFileSync('./data/studVsGrades.json', 'utf8'));
-var students = dataObj.students;
-var grades = dataObj.grades;
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://db_usr:db_pass@ds023570.mlab.com:23570/stud_grades');
+
+var students = require('./student').Student;
+var grades = require('./student').Grades;
+
+mongoose.connection.once('open', function(){
+	students.find({}, function(err, studentsDB) {
+		if(err) throw err;
+		students= studentsDB;
+	});
+	grades.find({}, function(err, gradesDB) {
+		if(err) throw err;
+		grades= gradesDB;
+	});
+	//mongoose.disconnect();
+});
 
 // function that returns info about every students.
 exports.getAllStudents = function() {
